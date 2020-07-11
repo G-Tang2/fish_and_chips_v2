@@ -11,17 +11,17 @@ class NavBar extends Component {
         <ListItem component="div" disableGutters>
           <ListItemText>
             <NavLink to="/" className="nav-link">
-              Home
+              MENU
             </NavLink>
           </ListItemText>
           <ListItemText>
-            <NavLink to="/menu" className="nav-link">
-              Menu
+            <NavLink to="/info" className="nav-link">
+              INFO
             </NavLink>
           </ListItemText>
           <ListItemText>
             <NavLink to="/contact" className="nav-link">
-              Contact
+              CONTACT US
             </NavLink>
           </ListItemText>
         </ListItem>
