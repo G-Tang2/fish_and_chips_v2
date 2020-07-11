@@ -1,0 +1,11 @@
+.hero-container {
+  .hero-image-container {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../Images/fish-and-chips.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+}
