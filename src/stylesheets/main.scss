@@ -1,0 +1,16 @@
+@import "./sections/header";
+@import "./sections/body";
+@import "./sections/hero";
+@import "./sections/info";
+
+.main-wrapper {
+  display: flex;
+  align-content: center;
+  margin: 0 auto;
+  max-width: 1500px;
+  width: 98vw;
+}
+
+.main-wrapper > * {
+  width: inherit;
+}

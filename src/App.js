@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./Components/Header";
-import Hero from "./Components/Hero";
-import Menu from "./Components/Menu";
-import Info from "./Components/Info";
-import "./Styles/main.scss";
-import "./Styles/material-ui.scss";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Menu from "./components/Menu";
+import Info from "./components/Info";
+import "./stylesheets/main.scss";
 
 function App() {
   return (

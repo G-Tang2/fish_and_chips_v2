@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from "@material-ui/icons/Phone";
-import "../Styles/info.scss";
 import { styled } from "@material-ui/styles";
 
 class Info extends Component {

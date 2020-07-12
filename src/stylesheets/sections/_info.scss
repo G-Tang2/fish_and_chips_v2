@@ -1,9 +1,4 @@
-@mixin text-style() {
-  font-size: 15pt;
-  margin-block-start: 0.7em;
-  margin-block-end: 0.7em;
-  color: white;
-}
+@import "../utilities/mixins";
 
 .info-container {
   padding: 10px 0;
