@@ -16,9 +16,13 @@ class Menu extends Component {
   }
 
   getItems() {
-    fetch("/api/item")
-      .then((res) => res.json())
-      .then((res) => this.setState({ items: res }));
+    let items = [];
+    this.state.categories.map((category) =>
+      fetch(`/api/${category.category_id}/item`)
+        .then((res) => res.json())
+        .then((res) => (items[category.category_id] = res))
+    );
+    this.setState({ items });
   }
 
   componentDidMount() {
@@ -27,17 +31,26 @@ class Menu extends Component {
   }
 
   render() {
-    console.log(this.state.categories);
     return (
       <section className="main-wrapper">
         <div>
           {this.state.categories.map((category) => (
-            <div>{category.category_name}</div>
+            <div>
+              <div>{category.category_name}</div>
+              {/* {console.log(category.category_id)}
+              {console.log(this.state.items)}
+              {console.log(this.state.items[category.category_id])}
+              {this.state.items[category.category_id].map((item) => (
+                <div>{item.item_name}</div>
+              ))} */}
+            </div>
           ))}
         </div>
         <div>
           {this.state.items.map((item) => (
-            <div>{item.item_name}</div>
+            <div>
+              <div>{item.item_name}</div>
+            </div>
           ))}
         </div>
       </section>
