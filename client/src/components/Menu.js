@@ -4,30 +4,44 @@ class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      renderedResponse: "",
+      categories: [],
+      items: [],
     };
   }
 
-  callAPI() {
-    fetch("/api/item")
-      .then((res) => res.text())
-      .then((res) => this.setState({ renderedResponse: res }));
+  getCategories() {
+    fetch("/api/category")
+      .then((res) => res.json())
+      .then((res) => this.setState({ categories: res }));
   }
 
-  getResponse = async () => {
-    const response = await fetch("/api/item");
-    console.log(response);
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-    return body;
-  };
+  getItems() {
+    fetch("/api/item")
+      .then((res) => res.json())
+      .then((res) => this.setState({ items: res }));
+  }
 
   componentDidMount() {
-    this.callAPI();
+    this.getCategories();
+    this.getItems();
   }
 
   render() {
-    return <section className="main-wrapper">{this.state.renderedResponse}</section>;
+    console.log(this.state.categories);
+    return (
+      <section className="main-wrapper">
+        <div>
+          {this.state.categories.map((category) => (
+            <div>{category.category_name}</div>
+          ))}
+        </div>
+        <div>
+          {this.state.items.map((item) => (
+            <div>{item.item_name}</div>
+          ))}
+        </div>
+      </section>
+    );
   }
 }
 
