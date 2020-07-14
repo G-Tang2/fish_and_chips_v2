@@ -9,13 +9,13 @@ class Menu extends Component {
   }
 
   callAPI() {
-    fetch("/api/category")
+    fetch("/api/item")
       .then((res) => res.text())
       .then((res) => this.setState({ renderedResponse: res }));
   }
 
   getResponse = async () => {
-    const response = await fetch("/api/category");
+    const response = await fetch("/api/item");
     console.log(response);
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
