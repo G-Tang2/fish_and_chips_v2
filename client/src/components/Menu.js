@@ -15,46 +15,33 @@ class Menu extends Component {
       .then((res) => this.setState({ categories: res }));
   }
 
-  getItems() {
-    let items = [];
-    this.state.categories.map((category) =>
-      fetch(`/api/${category.category_id}/item`)
-        .then((res) => res.json())
-        .then((res) => (items[category.category_id] = res))
-    );
-    this.setState({ items });
+  getItems(category) {
+    fetch(`/api/${category.category_id}/item`).then((res) => res.text());
   }
+
+  // getItems() {
+  //   this.state.categories.forEach((element) =>
+  //     fetch(`/api/${category.category_id}/item`)
+  //       .then((res) => res.json())
+  //       .then((res) => this.setState({items: res}))
+  // }
 
   componentDidMount() {
     this.getCategories();
-    this.getItems();
+  }
+
+  categoryBlock() {
+    return this.state.categories.map((category) => (
+      <div>
+        <div>{category.category_name}</div>
+        <div>{this.getItems(category)}</div>
+      </div>
+    ));
   }
 
   render() {
-    return (
-      <section className="main-wrapper">
-        <div>
-          {this.state.categories.map((category) => (
-            <div>
-              <div>{category.category_name}</div>
-              {/* {console.log(category.category_id)}
-              {console.log(this.state.items)}
-              {console.log(this.state.items[category.category_id])}
-              {this.state.items[category.category_id].map((item) => (
-                <div>{item.item_name}</div>
-              ))} */}
-            </div>
-          ))}
-        </div>
-        <div>
-          {this.state.items.map((item) => (
-            <div>
-              <div>{item.item_name}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
+    let categ = this.categoryBlock();
+    return <section className="main-wrapper">{categ}</section>;
   }
 }
 
