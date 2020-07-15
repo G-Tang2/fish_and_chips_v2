@@ -15,26 +15,28 @@ class Menu extends Component {
       .then((res) => this.setState({ categories: res }));
   }
 
-  getItems(category) {
-    fetch(`/api/${category.category_id}/item`).then((res) => res.text());
+  getItems() {
+    fetch(`/api/item`)
+      .then((res) => res.json())
+      .then((res) => this.setState({ items: res }));
   }
-
-  // getItems() {
-  //   this.state.categories.forEach((element) =>
-  //     fetch(`/api/${category.category_id}/item`)
-  //       .then((res) => res.json())
-  //       .then((res) => this.setState({items: res}))
-  // }
 
   componentDidMount() {
     this.getCategories();
+    this.getItems();
   }
 
   categoryBlock() {
     return this.state.categories.map((category) => (
       <div>
         <div>{category.category_name}</div>
-        <div>{this.getItems(category)}</div>
+        <div>
+          {this.state.items
+            .filter((item) => item.category_id === category.category_id)
+            .map((filteredItem) => (
+              <div>{filteredItem.item_name}</div>
+            ))}
+        </div>
       </div>
     ));
   }
