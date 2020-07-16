@@ -37,7 +37,7 @@ class Item extends Component {
     const filteredItems = this.state.items.filter((item) => item.category_id === this.props.category.category_id);
 
     return filteredItems.map((categoryItem) => (
-      <div className="item-container">
+      <div key={categoryItem.item_id} className="item-container">
         <div className="item-pricing">
           <span className="flex-side">{categoryItem.item_name}</span>
           <span className="flex-center">{dots(200)}</span>

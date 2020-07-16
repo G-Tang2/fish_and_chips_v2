@@ -19,7 +19,12 @@ class MenuBody extends Component {
   categoryTitle(category) {
     if (category.parent_category_id === null) {
       //main category
-      return <h1>{category.category_name.toUpperCase()}</h1>;
+      return (
+        <React.Fragment>
+          <h1>{category.category_name.toUpperCase()}</h1>
+          {this.categoryDescription(category)}
+        </React.Fragment>
+      );
     } else {
       //sub-category
       return <h3>EXTRA</h3>;
@@ -27,7 +32,7 @@ class MenuBody extends Component {
   }
 
   categoryDescription(category) {
-    return category.category_desc !== null ? <span>{category.category_desc}</span> : null;
+    return category.category_desc !== null ? <span className="category-description">{category.category_desc}</span> : null;
   }
 
   addDivider(category) {
@@ -38,11 +43,10 @@ class MenuBody extends Component {
 
   category() {
     return this.state.categories.map((category) => (
-      <React.Fragment>
+      <React.Fragment key={category.category_id}>
         {this.addDivider(category)}
         <div className="category-container">
           <div className="category-title">{this.categoryTitle(category)}</div>
-          <div className="category-description">{this.categoryDescription(category)}</div>
           <div className="grid-x2">
             <Item category={category} />
           </div>

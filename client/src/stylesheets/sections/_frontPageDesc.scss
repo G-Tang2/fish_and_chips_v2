@@ -1,0 +1,11 @@
+.front-page-desc-container {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  background-color: #3f51b5;
+  .front-page-desc {
+    font-size: 24pt;
+    margin: auto;
+    color: white;
+  }
+}

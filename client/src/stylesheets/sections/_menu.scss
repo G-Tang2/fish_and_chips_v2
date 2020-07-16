@@ -1,4 +1,4 @@
-$title-bottom-margin: 5px; // includes subtitles
+$title-bottom-margin: 8px; // includes subtitles
 
 .menu-container {
   padding: 0px 100px;
@@ -12,7 +12,7 @@ $title-bottom-margin: 5px; // includes subtitles
     padding: 40px 75px;
     border: 2px solid black;
     .horizontal-divider {
-      margin: 20px auto;
+      margin: 28px auto 20px auto;
       height: 2px;
       background-color: rgba(#000000, 0.4);
     }
@@ -40,11 +40,15 @@ $title-bottom-margin: 5px; // includes subtitles
       }
     }
     .category-title {
+      margin-bottom: $title-bottom-margin;
       h1 {
-        margin: 0 0 $title-bottom-margin 0;
+        font-size: 24pt;
+        margin: 0;
       }
       h3 {
-        margin-bottom: $title-bottom-margin;
+        font-size: 20pt;
+        font-weight: 400;
+        margin-bottom: 0;
       }
     }
     .grid-x2 {
