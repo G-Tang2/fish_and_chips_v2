@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Divider from "@material-ui/core/Divider";
 import Item from "./Item";
 
 class MenuBody extends Component {
@@ -17,22 +18,36 @@ class MenuBody extends Component {
 
   categoryTitle(category) {
     if (category.parent_category_id === null) {
+      //main category
       return <h1>{category.category_name.toUpperCase()}</h1>;
     } else {
-      return <h3>{category.category_name.toUpperCase()}</h3>;
+      //sub-category
+      return <h3>EXTRA</h3>;
+    }
+  }
+
+  categoryDescription(category) {
+    return category.category_desc !== null ? <span>{category.category_desc}</span> : null;
+  }
+
+  addDivider(category) {
+    if (category.category_id !== 1 && category.parent_category_id === null) {
+      return <Divider className="horizontal-divider" />;
     }
   }
 
   category() {
     return this.state.categories.map((category) => (
-      <div>
+      <React.Fragment>
+        {this.addDivider(category)}
         <div className="category-container">
           <div className="category-title">{this.categoryTitle(category)}</div>
+          <div className="category-description">{this.categoryDescription(category)}</div>
           <div className="grid-x2">
             <Item category={category} />
           </div>
         </div>
-      </div>
+      </React.Fragment>
     ));
   }
 

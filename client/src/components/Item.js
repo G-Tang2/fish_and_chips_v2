@@ -14,23 +14,38 @@ class Item extends Component {
       .then((res) => this.setState({ items: res }));
   }
 
-  categoryItems(category) {
-    let dots = (numberOfDots) => {
+  categoryItems() {
+    const dots = (numberOfDots) => {
       let retVal = "";
       for (let i = 0; i < numberOfDots; i++) {
         retVal += ".";
       }
       return retVal;
     };
-    return this.state.items
-      .filter((item) => item.category_id === category.category_id)
-      .map((categoryItem) => (
-        <div item xs={6} className="item-container">
+
+    // returns the item description if it has any
+    let itemDescription = (item) => {
+      return item.item_desc !== null ? item.item_desc : null;
+    };
+
+    // returns a plus symbol (+) if the category is an "extra cost" category
+    let priceSymbol = () => {
+      return this.props.category.parent_category_id !== null ? "+" : "";
+    };
+
+    // items of the given category
+    const filteredItems = this.state.items.filter((item) => item.category_id === this.props.category.category_id);
+
+    return filteredItems.map((categoryItem) => (
+      <div className="item-container">
+        <div className="item-pricing">
           <span className="flex-side">{categoryItem.item_name}</span>
           <span className="flex-center">{dots(200)}</span>
-          <span className="flex-side">{"$" + categoryItem.item_price.toFixed(2)}</span>
+          <span className="flex-side">{priceSymbol() + "$" + categoryItem.item_price.toFixed(2)}</span>
         </div>
-      ));
+        <div className="item-description">{itemDescription(categoryItem)}</div>
+      </div>
+    ));
   }
 
   componentDidMount() {
@@ -38,7 +53,7 @@ class Item extends Component {
   }
 
   render() {
-    return this.categoryItems(this.props.category);
+    return this.categoryItems();
   }
 }
 
