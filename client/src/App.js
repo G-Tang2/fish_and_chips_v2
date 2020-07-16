@@ -13,7 +13,7 @@ class App extends Component {
         <Header title="Oakleigh South Fish and Chips" />
         <Hero />
         <body>
-          <Menu />
+          <Menu title="MENU" />
           <Info address="14 Old Dandenong Road Oakleigh South 3167" phoneNo="9570 2222" />
         </body>
       </div>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import TypoGraphy from "@material-ui/core/Typography";
 
 class Hero extends Component {
   render() {
