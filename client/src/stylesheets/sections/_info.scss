@@ -1,26 +1,42 @@
 @import "../utilities/mixins";
 
 .info-container {
-  padding: 10px 0;
+  padding-bottom: 50px;
   background-color: #3f51b5;
-  .inner-info-container {
-    .icon {
-      margin: auto 0;
+  .title {
+    h1 {
+      color: white;
     }
-    .location-info {
-      display: flex;
-      justify-content: center;
-      p {
-        @include text-style();
+  }
+  .text-info-container {
+    display: flex;
+    justify-content: center;
+    .inner-text-info-container {
+      margin: auto;
+      .icon {
+        margin: auto 0;
+        color: white;
+      }
+      .location-info {
+        display: flex;
+        justify-content: center;
+        p {
+          @include text-style();
+        }
+      }
+      .phone-info {
+        display: flex;
+        justify-content: center;
+        p {
+          @include text-style();
+          margin-left: 2px;
+        }
       }
     }
-    .phone-info {
-      display: flex;
-      justify-content: center;
-      p {
-        @include text-style();
-        margin-left: 2px;
-      }
+  }
+  .google-maps-container {
+    .google-maps {
+      border: 3px solid white;
     }
   }
 }

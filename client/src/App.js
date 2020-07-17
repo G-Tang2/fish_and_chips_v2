@@ -14,8 +14,8 @@ class App extends Component {
         <Header title="Oakleigh South Fish and Chips" />
         <Hero />
         <FrontPageDescription description="Cooked in 100% cholesterol free vegetable oil" />
-        <Menu title="MENU" />
-        <Info address="14 Old Dandenong Road Oakleigh South 3167" phoneNo="9570 2222" />
+        <Menu title="Menu" />
+        <Info title="Info" address="14 Old Dandenong Road Oakleigh South 3167" phoneNo="9570 2222" />
       </div>
     );
   }
