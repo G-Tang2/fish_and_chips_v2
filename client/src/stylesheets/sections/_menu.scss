@@ -1,6 +1,6 @@
 @import "../utilities/settings";
 
-.title {
+.heading {
   text-align: center;
   font-size: $primary-heading-size;
 }
@@ -36,11 +36,12 @@
           margin-left: 20px;
           color: rgba($color: #000000, $alpha: 0.8);
           font-style: italic;
+          font-size: 14px;
         }
       }
     }
-    .category-title {
-      margin-bottom: $title-bottom-margin;
+    .category-heading {
+      margin-bottom: $heading-bottom-margin;
       h1 {
         font-size: 24pt;
         margin: 0;
@@ -49,6 +50,10 @@
         font-size: 20pt;
         font-weight: 400;
         margin-bottom: 0;
+      }
+      .category-description {
+        font-size: 18px;
+        font-style: italic;
       }
     }
     .grid-x2 {

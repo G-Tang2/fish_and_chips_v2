@@ -16,7 +16,7 @@ class MenuBody extends Component {
       .then((res) => this.setState({ categories: res }));
   }
 
-  categoryTitle(category) {
+  categoryHeading(category) {
     if (category.parent_category_id === null) {
       //main category
       return (
@@ -46,7 +46,7 @@ class MenuBody extends Component {
       <React.Fragment key={category.category_id}>
         {this.addDivider(category)}
         <div className="category-container">
-          <div className="category-title">{this.categoryTitle(category)}</div>
+          <div className="category-heading">{this.categoryHeading(category)}</div>
           <div className="grid-x2">
             <Item category={category} />
           </div>

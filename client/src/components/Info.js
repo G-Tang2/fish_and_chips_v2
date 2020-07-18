@@ -55,8 +55,8 @@ class Info extends Component {
     return (
       <section className="info-container">
         <Grid container className="main-wrapper">
-          <Grid className="title" item xs={12}>
-            <h1>{this.props.title.toUpperCase()}</h1>
+          <Grid className="heading" item xs={12}>
+            <h1>{this.props.heading.toUpperCase()}</h1>
           </Grid>
           <Grid className="store-info-wrapper" item xs={12}>
             {this.storeInfo()}

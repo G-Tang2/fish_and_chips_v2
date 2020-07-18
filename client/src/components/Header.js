@@ -12,8 +12,8 @@ class Header extends Component {
         <AppBar color="primary" position="static">
           <div className="main-wrapper">
             <Toolbar disableGutters>
-              <TypoGraphy variant="h4" className="main-title">
-                {this.props.title}
+              <TypoGraphy variant="h4" className="main-heading">
+                {this.props.heading}
               </TypoGraphy>
               <NavBar />
             </Toolbar>

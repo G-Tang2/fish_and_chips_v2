@@ -4,7 +4,7 @@
 .info-container {
   padding-bottom: 50px;
   background-color: #3f51b5;
-  .title {
+  .heading {
     h1 {
       font-size: $primary-heading-size;
       color: $primary-font-color;
@@ -45,6 +45,13 @@
     .open-hr-item-container {
       display: flex;
       justify-content: space-between;
+      margin: 5px auto;
+      font-size: $large-body-font-size;
+    }
+    h3 {
+      margin: 0.5em 0;
+      padding: 0.5em 0;
+      font-size: $secondary-heading-size * 0.75;
     }
   }
   .google-maps-container {

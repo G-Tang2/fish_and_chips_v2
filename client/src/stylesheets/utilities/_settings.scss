@@ -1,4 +1,9 @@
 $primary-font-color: white;
-$primary-heading-size: 30pt; // for section headings such as Menu and Info
 
-$title-bottom-margin: 8px; // includes subtitles
+$primary-heading-size: 40px; // for section headings such as Menu and Info
+$secondary-heading-size: $primary-heading-size * 0.8;
+
+$large-body-font-size: 20px;
+$small-font-size: 14px;
+
+$heading-bottom-margin: 8px; // includes sub-headings
