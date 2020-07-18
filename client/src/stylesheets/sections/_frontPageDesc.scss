@@ -1,3 +1,5 @@
+@import "../utilities/settings";
+
 .front-page-desc-container {
   display: flex;
   height: 100px;
@@ -6,6 +8,6 @@
   .front-page-desc {
     font-size: 24pt;
     margin: auto;
-    color: white;
+    color: $primary-font-color;
   }
 }

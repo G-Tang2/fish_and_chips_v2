@@ -1,7 +1,9 @@
+@import "../utilities/settings";
+
 .nav-link {
   padding: 10px 15px;
   text-decoration: none;
-  color: white;
+  color: $primary-font-color;
 }
 
 .main-title {

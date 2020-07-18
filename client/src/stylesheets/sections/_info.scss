@@ -1,17 +1,20 @@
 @import "../utilities/mixins";
+@import "../utilities/settings";
 
 .info-container {
   padding-bottom: 50px;
   background-color: #3f51b5;
   .title {
     h1 {
-      color: white;
+      font-size: $primary-heading-size;
+      color: $primary-font-color;
     }
   }
-  .text-info-container {
+  .store-info-wrapper {
     display: flex;
     justify-content: center;
-    .inner-text-info-container {
+    margin-bottom: 35px;
+    .store-info-container {
       margin: auto;
       .icon {
         margin: auto 0;
@@ -32,6 +35,16 @@
           margin-left: 2px;
         }
       }
+    }
+  }
+  .open-hr-container {
+    margin: auto;
+    width: 70%;
+    text-align: center;
+    color: $primary-font-color;
+    .open-hr-item-container {
+      display: flex;
+      justify-content: space-between;
     }
   }
   .google-maps-container {

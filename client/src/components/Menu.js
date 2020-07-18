@@ -6,9 +6,7 @@ class Menu extends Component {
     return (
       <section className="main-wrapper">
         <div className="menu-container">
-          <div className="title">
-            <h1>{this.props.title.toUpperCase()}</h1>
-          </div>
+          <h1 className="title">{this.props.title.toUpperCase()}</h1>
           <div className="menu-body">
             <MenuBody />
           </div>

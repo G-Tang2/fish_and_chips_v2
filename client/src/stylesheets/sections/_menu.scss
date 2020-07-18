@@ -1,10 +1,8 @@
-$title-bottom-margin: 8px; // includes subtitles
+@import "../utilities/settings";
 
 .title {
   text-align: center;
-  h1 {
-    font-size: 30pt;
-  }
+  font-size: $primary-heading-size;
 }
 
 .menu-container {
