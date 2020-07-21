@@ -27,8 +27,6 @@ class Menu extends Component {
   resizeCategoryBarOnScroll() {
     const headerHeight = this.props.getHeader().current.headerRef.current.offsetHeight;
     const currentYPos = this.myRef.current.getBoundingClientRect().y;
-    console.log(currentYPos);
-    // console.log(window.pageYOffset);
     if (currentYPos === headerHeight && this.state.expandCategoryBar === false) {
       this.setState({ expandCategoryBar: true });
     } else if (currentYPos !== headerHeight && this.state.expandCategoryBar === true) {
@@ -45,11 +43,11 @@ class Menu extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="main-wrapper menu-wrapper">
+        <div className="main-wrapper menu-wrapper">
           <div className="menu-container">
             <h1 className="heading">{this.props.heading.toUpperCase()}</h1>
           </div>
-        </section>
+        </div>
         <div className={this.state.expandCategoryBar ? "category-bar-expanded" : "category-bar"} ref={this.myRef}>
           <CategoryBar categories={this.state.categories} />
         </div>

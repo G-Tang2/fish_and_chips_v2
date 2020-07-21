@@ -5,4 +5,5 @@
 .category-bar-expanded {
   @include category-bar-style();
   width: 100%;
+  max-width: 100%;
 }

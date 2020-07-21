@@ -3,14 +3,14 @@
 
 .header {
   @include header-style();
-  transition: 0.2s !important;
+  transition: 0.2s;
 }
 
 .header-expanded {
   @include header-style();
   font-size: 30px;
   height: $heading-height * 1.5;
-  transition: 0.2s !important;
+  transition: $header-transition;
 }
 
 .heading-inner-container {
@@ -29,16 +29,16 @@
 nav {
   position: absolute;
   right: 0;
-  transition: 0.2;
+  transition: $header-transition;
 }
 
 .header-heading {
   @include header-heading-style();
-  transition: 0.2s;
+  transition: $header-transition;
 }
 
 .header-heading-expanded {
   @include header-heading-style();
   font-size: 2.125rem * 1.25 !important;
-  transition: 0.2s;
+  transition: $header-transition;
 }

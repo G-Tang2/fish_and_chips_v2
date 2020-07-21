@@ -10,9 +10,9 @@
 
 .main-wrapper {
   .menu-container {
-    width: auto !important;
-    padding: 0px $menu-padding-x;
-    max-width: $main-max-width - 2 * $menu-padding-x;
+    width: $menu-width;
+    margin: auto;
+    max-width: $menu-max-width;
     .menu-body {
       padding: 40px 75px;
       margin-bottom: 40px;

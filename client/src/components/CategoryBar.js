@@ -3,7 +3,11 @@ import Button from "@material-ui/core/Button";
 
 class CategoryBar extends Component {
   mainCategory(category) {
-    return category.parent_category_id === null ? <Button className="category-link">{category.category_name}</Button> : null;
+    return category.parent_category_id === null ? (
+      <Button key={category.category_id} className="category-link">
+        {category.category_name}
+      </Button>
+    ) : null;
   }
 
   render() {

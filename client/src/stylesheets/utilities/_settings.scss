@@ -10,6 +10,13 @@ $heading-height: 64px;
 
 $main-max-width: 1500px; // used for wrappers
 
-$menu-padding-x: 100px;
+$menu-max-width: 1300px;
+$menu-width: 85vw;
 
 $heading-bottom-margin: 8px; // includes sub-headings
+
+// transition times
+
+//header
+$header-transition: 200ms ease-in-out;
+$category-bar-transition: 200ms ease-in-out;

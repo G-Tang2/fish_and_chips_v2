@@ -21,7 +21,7 @@ class Info extends Component {
       <div className="open-hr-container">
         <h3 className="open-hr-heading">{this.props.openHrHeading.toUpperCase()}</h3>
         {this.state.openingHours.map((day) => (
-          <div className="open-hr-item-container">
+          <div key={day.open_hr_no} className="open-hr-item-container">
             <div className="open-hr-day">{day.open_hr_day}</div>
             <div className="open-hr-time">
               {day.open_hour}-{day.close_hour}
