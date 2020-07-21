@@ -1,6 +1,70 @@
+@import "./settings";
+
+$header-transition: 0.2s;
+
 @mixin text-style() {
   font-size: $large-body-font-size;
   margin-block-start: 0.7em;
   margin-block-end: 0.7em;
   color: white;
+}
+
+@mixin default-wrapper() {
+  display: flex;
+  align-content: center;
+  margin: 0 auto;
+  max-width: $main-max-width;
+  width: 98vw;
+}
+
+@mixin header-style() {
+  height: $heading-height;
+  position: sticky !important;
+  top: 0;
+  justify-content: center;
+  transition: $header-transition;
+}
+
+@mixin header-heading-style() {
+  .header-heading {
+    font-size: 2.125rem;
+    flex-grow: 1;
+    padding-left: 15px;
+    text-align: justify;
+    transition: 0.4s;
+    position: absolute;
+    left: 0;
+    transition: $header-transition;
+  }
+}
+
+@mixin nav-style() {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: $primary-font-color;
+  transition: $header-transition;
+}
+
+@mixin category-bar-style() {
+  display: flex;
+  position: sticky;
+  top: 64px;
+  width: fit-content;
+  margin: auto;
+  justify-content: center;
+  overflow-x: scroll;
+  background-color: aqua;
+  // transition: 2s ease-in-out;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .category-link {
+    min-width: unset;
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+  span {
+    width: max-content;
+  }
 }

@@ -1,0 +1,9 @@
+@import "./utilities/mixins";
+
+.main-wrapper {
+  @include default-wrapper();
+}
+
+.main-wrapper > * {
+  width: inherit;
+}

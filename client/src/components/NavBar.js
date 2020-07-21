@@ -10,17 +10,17 @@ class NavBar extends Component {
       <List component="nav">
         <ListItem component="div" disableGutters>
           <ListItemText>
-            <NavLink to="/" className="nav-link">
+            <NavLink to="/" className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"}>
               MENU
             </NavLink>
           </ListItemText>
           <ListItemText>
-            <NavLink to="/info" className="nav-link">
+            <NavLink to="/info" className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"}>
               INFO
             </NavLink>
           </ListItemText>
           <ListItemText>
-            <NavLink to="/contact" className="nav-link">
+            <NavLink to="/contact" className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"}>
               CONTACT US
             </NavLink>
           </ListItemText>

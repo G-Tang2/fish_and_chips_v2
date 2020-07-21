@@ -3,19 +3,6 @@ import Divider from "@material-ui/core/Divider";
 import Item from "./Item";
 
 class MenuBody extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      categories: [],
-    };
-  }
-
-  getCategories() {
-    fetch("/api/category")
-      .then((res) => res.json())
-      .then((res) => this.setState({ categories: res }));
-  }
-
   categoryHeading(category) {
     if (category.parent_category_id === null) {
       //main category
@@ -42,7 +29,7 @@ class MenuBody extends Component {
   }
 
   category() {
-    return this.state.categories.map((category) => (
+    return this.props.categories.map((category) => (
       <React.Fragment key={category.category_id}>
         {this.addDivider(category)}
         <div className="category-container">
@@ -53,10 +40,6 @@ class MenuBody extends Component {
         </div>
       </React.Fragment>
     ));
-  }
-
-  componentDidMount() {
-    this.getCategories();
   }
 
   render() {

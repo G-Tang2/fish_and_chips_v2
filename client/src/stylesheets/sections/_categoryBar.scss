@@ -1,0 +1,8 @@
+.category-bar {
+  @include category-bar-style();
+}
+
+.category-bar-expanded {
+  @include category-bar-style();
+  width: 100%;
+}

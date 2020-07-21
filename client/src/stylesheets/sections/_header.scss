@@ -1,12 +1,44 @@
 @import "../utilities/settings";
+@import "../utilities/mixins";
 
-.nav-link {
-  padding: 10px 15px;
-  text-decoration: none;
-  color: $primary-font-color;
+.header {
+  @include header-style();
+  transition: 0.2s !important;
 }
 
-.main-heading {
-  flex-grow: 1;
-  padding-left: 15px;
+.header-expanded {
+  @include header-style();
+  font-size: 30px;
+  height: $heading-height * 1.5;
+  transition: 0.2s !important;
+}
+
+.heading-inner-container {
+  justify-content: space-between;
+}
+
+.nav-link {
+  @include nav-style();
+}
+
+.nav-link-expanded {
+  @include nav-style();
+  font-size: 20px;
+}
+
+nav {
+  position: absolute;
+  right: 0;
+  transition: 0.2;
+}
+
+.header-heading {
+  @include header-heading-style();
+  transition: 0.2s;
+}
+
+.header-heading-expanded {
+  @include header-heading-style();
+  font-size: 2.125rem * 1.25 !important;
+  transition: 0.2s;
 }
