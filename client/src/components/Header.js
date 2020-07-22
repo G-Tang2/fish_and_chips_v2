@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import TypoGraphy from "@material-ui/core/Typography";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import NavBar from "./NavBar";
@@ -33,18 +31,14 @@ class Header extends Component {
 
   render() {
     return (
-      <Router>
-        <AppBar className={this.state.topOfPage ? "header-expanded" : "header"} color="primary" position="static" ref={this.headerRef}>
-          <div className="main-wrapper">
-            <Toolbar className="heading-inner-container" disableGutters>
-              <TypoGraphy className={this.state.topOfPage ? "header-heading-expanded" : "header-heading"} variant="h4">
-                {this.props.heading}
-              </TypoGraphy>
-              <NavBar topOfPage={this.state.topOfPage} />
-            </Toolbar>
-          </div>
-        </AppBar>
-      </Router>
+      <AppBar className={this.state.topOfPage ? "header-expanded" : "header"} color="primary" position="static" ref={this.headerRef}>
+        <div className="main-wrapper">
+          <Toolbar className="heading-inner-container" disableGutters>
+            <h3 className={this.state.topOfPage ? "header-heading-expanded" : "header-heading"}>{this.props.heading}</h3>
+            <NavBar getMenu={this.props.getMenu} getInfo={this.props.getInfo} headerRef={this.headerRef} topOfPage={this.state.topOfPage} />
+          </Toolbar>
+        </div>
+      </AppBar>
     );
   }
 }

@@ -3,14 +3,14 @@
 
 .header {
   @include header-style();
-  transition: 0.2s;
+  transition: $header-transition !important;
 }
 
 .header-expanded {
   @include header-style();
   font-size: 30px;
   height: $heading-height * 1.5;
-  transition: $header-transition;
+  transition: $header-transition !important;
 }
 
 .heading-inner-container {
@@ -23,7 +23,7 @@
 
 .nav-link-expanded {
   @include nav-style();
-  font-size: 20px;
+  font-size: $nav-bar-font-size * 1.1 !important;
 }
 
 nav {
@@ -34,11 +34,9 @@ nav {
 
 .header-heading {
   @include header-heading-style();
-  transition: $header-transition;
 }
 
 .header-heading-expanded {
   @include header-heading-style();
   font-size: 2.125rem * 1.25 !important;
-  transition: $header-transition;
 }

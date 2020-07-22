@@ -1,7 +1,5 @@
 @import "./settings";
 
-$header-transition: 0.2s;
-
 @mixin text-style() {
   font-size: $large-body-font-size;
   margin-block-start: 0.7em;
@@ -27,23 +25,18 @@ $header-transition: 0.2s;
 }
 
 @mixin header-heading-style() {
-  .header-heading {
-    font-size: 2.125rem;
-    flex-grow: 1;
-    padding-left: 15px;
-    text-align: justify;
-    transition: 0.4s;
-    position: absolute;
-    left: 0;
-    transition: $header-transition;
-  }
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 10px;
+  font-size: 2.125rem;
+  transition: $header-transition;
 }
 
 @mixin nav-style() {
-  padding: 10px 15px;
-  text-decoration: none;
-  color: $primary-font-color;
-  transition: $header-transition;
+  padding: 10px 15px !important;
+  color: $primary-font-color !important;
+  font-size: $nav-bar-font-size !important;
+  transition: $header-transition !important;
 }
 
 @mixin category-bar-style() {
@@ -54,7 +47,7 @@ $header-transition: 0.2s;
   max-width: 1300px;
   margin: auto;
   overflow-x: scroll;
-  transition: width $category-bar-transition;
+  transition: $category-bar-transition;
   background-color: #efe2ba;
 
   &::-webkit-scrollbar {

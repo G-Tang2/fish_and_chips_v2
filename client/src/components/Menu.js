@@ -36,8 +36,6 @@ class Menu extends Component {
   }
 
   disableTransitionOnResize() {
-    const classes = this.myRef.current;
-    // console.log(classes);
     let timer = 0;
 
     if (timer) {

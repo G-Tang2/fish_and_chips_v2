@@ -5,6 +5,8 @@ $primary-background-color: #4056a1 !important;
 $primary-heading-size: 40px; // for section headings such as Menu and Info
 $secondary-heading-size: $primary-heading-size * 0.8;
 
+$nav-bar-font-size: 17px;
+
 $large-body-font-size: 20px;
 $small-font-size: 14px;
 
@@ -18,7 +20,6 @@ $menu-width: 85vw;
 $heading-bottom-margin: 8px; // includes sub-headings
 
 // transition times
-
 //header
-$header-transition: 200ms ease-in-out;
+$header-transition: 300ms ease-in-out;
 $category-bar-transition: 200ms ease-in-out;
