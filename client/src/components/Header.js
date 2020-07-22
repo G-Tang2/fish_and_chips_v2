@@ -27,6 +27,10 @@ class Header extends Component {
     window.addEventListener("scroll", this.resizeHeaderOnScroll);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.resizeHeaderOnScroll);
+  }
+
   render() {
     return (
       <Router>

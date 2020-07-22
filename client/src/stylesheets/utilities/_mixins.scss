@@ -23,6 +23,7 @@ $header-transition: 0.2s;
   top: 0;
   justify-content: center;
   transition: $header-transition;
+  background-color: $primary-background-color;
 }
 
 @mixin header-heading-style() {
@@ -53,9 +54,8 @@ $header-transition: 0.2s;
   max-width: 1300px;
   margin: auto;
   overflow-x: scroll;
-  justify-content: center;
-  transition: max-width $category-bar-transition;
-  background-color: aqua;
+  transition: width $category-bar-transition;
+  background-color: #efe2ba;
 
   &::-webkit-scrollbar {
     display: none;

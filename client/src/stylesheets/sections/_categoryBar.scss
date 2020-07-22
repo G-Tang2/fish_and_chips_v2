@@ -7,3 +7,12 @@
   width: 100%;
   max-width: 100%;
 }
+
+.no-transition {
+  transition: none;
+}
+
+.inner-category-bar {
+  display: flex;
+  margin: auto;
+}

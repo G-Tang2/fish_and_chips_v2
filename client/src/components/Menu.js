@@ -7,10 +7,11 @@ class Menu extends Component {
     super(props);
     this.myRef = React.createRef();
     this.resizeCategoryBarOnScroll = this.resizeCategoryBarOnScroll.bind(this);
+    this.disableTransitionOnResize = this.disableTransitionOnResize.bind(this);
     this.state = {
       categories: [],
       expandCategoryBar: false,
-      initCategoryBarYPos: null,
+      resizing: false,
     };
   }
 
@@ -34,10 +35,33 @@ class Menu extends Component {
     }
   }
 
+  disableTransitionOnResize() {
+    const classes = this.myRef.current;
+    // console.log(classes);
+    let timer = 0;
+
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    } else this.setState({ resizing: true });
+
+    timer = setTimeout(() => {
+      this.setState({ resizing: false });
+      timer = null;
+    }, 100);
+  }
+
+  categoryBarClassName() {
+    let retVal = this.state.expandCategoryBar ? "category-bar-expanded" : "category-bar";
+    retVal += this.state.resizing ? " no-transition" : "";
+    return retVal;
+  }
+
   componentDidMount() {
     this.getCategories();
     this.setYPos();
     window.addEventListener("scroll", this.resizeCategoryBarOnScroll);
+    window.addEventListener("resize", this.disableTransitionOnResize);
   }
 
   render() {
@@ -48,8 +72,10 @@ class Menu extends Component {
             <h1 className="heading">{this.props.heading.toUpperCase()}</h1>
           </div>
         </div>
-        <div className={this.state.expandCategoryBar ? "category-bar-expanded" : "category-bar"} ref={this.myRef}>
-          <CategoryBar categories={this.state.categories} />
+        <div className={this.categoryBarClassName()} ref={this.myRef}>
+          <div className="inner-category-bar">
+            <CategoryBar categories={this.state.categories} />
+          </div>
         </div>
         <section className="main-wrapper menu-wrapper">
           <div className="menu-container">
