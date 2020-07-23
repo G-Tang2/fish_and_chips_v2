@@ -28,12 +28,12 @@ class NavBar extends Component {
             </Button>
           </ListItemText>
           <ListItemText>
-            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"} onClick={() => this.scrollTo(this.props.getMenu())}>
+            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"} onClick={() => this.scrollTo(this.props.menuRef)}>
               MENU
             </Button>
           </ListItemText>
           <ListItemText>
-            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"} onClick={() => this.scrollTo(this.props.getInfo())}>
+            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"} onClick={() => this.scrollTo(this.props.infoRef)}>
               INFO
             </Button>
           </ListItemText>

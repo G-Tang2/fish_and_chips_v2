@@ -5,7 +5,9 @@ import MenuBody from "./MenuBody";
 class Menu extends Component {
   constructor(props) {
     super(props);
-    this.myRef = React.createRef();
+    this.catBarRef = React.createRef();
+    this.menuRef = React.createRef();
+    this.topMenuRef = React.createRef();
     this.resizeCategoryBarOnScroll = this.resizeCategoryBarOnScroll.bind(this);
     this.disableTransitionOnResize = this.disableTransitionOnResize.bind(this);
     this.state = {
@@ -22,12 +24,12 @@ class Menu extends Component {
   }
 
   setYPos() {
-    this.setState({ initCategoryBarYPos: this.myRef.current.offsetTop });
+    this.setState({ initCategoryBarYPos: this.catBarRef.current.offsetTop });
   }
 
   resizeCategoryBarOnScroll() {
-    const headerHeight = this.props.getHeader().current.headerRef.current.offsetHeight;
-    const currentYPos = this.myRef.current.getBoundingClientRect().y;
+    const headerHeight = this.props.headerRef.current.headerRef.current.offsetHeight;
+    const currentYPos = this.catBarRef.current.getBoundingClientRect().y;
     if (currentYPos === headerHeight && this.state.expandCategoryBar === false) {
       this.setState({ expandCategoryBar: true });
     } else if (currentYPos !== headerHeight && this.state.expandCategoryBar === true) {
@@ -70,15 +72,15 @@ class Menu extends Component {
             <h1 className="heading">{this.props.heading.toUpperCase()}</h1>
           </div>
         </div>
-        <div className={this.categoryBarClassName()} ref={this.myRef}>
+        <div className={this.categoryBarClassName()} ref={this.catBarRef}>
           <div className="inner-category-bar">
-            <CategoryBar categories={this.state.categories} />
+            <CategoryBar categories={this.state.categories} headerRef={this.props.headerRef} menuRef={this.menuRef} catBarRef={this.catBarRef} />
           </div>
         </div>
-        <section className="main-wrapper menu-wrapper">
+        <section className="main-wrapper menu-wrapper" ref={this.topMenuRef}>
           <div className="menu-container">
             <div className="menu-body">
-              <MenuBody categories={this.state.categories} />
+              <MenuBody categories={this.state.categories} ref={this.menuRef} topMenuRef={this.topMenuRef} />
             </div>
           </div>
         </section>

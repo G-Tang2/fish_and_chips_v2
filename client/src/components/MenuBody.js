@@ -3,6 +3,11 @@ import Divider from "@material-ui/core/Divider";
 import Item from "./Item";
 
 class MenuBody extends Component {
+  constructor(props) {
+    super(props);
+    this.categoryRefs = [];
+  }
+
   categoryHeading(category) {
     if (category.parent_category_id === null) {
       //main category
@@ -23,27 +28,31 @@ class MenuBody extends Component {
   }
 
   addDivider(category) {
-    if (category.category_id !== 1 && category.parent_category_id === null) {
-      return <Divider className="horizontal-divider" />;
+    if (category.category_id === 1) {
+      this.categoryRefs[1] = this.props.topMenuRef.current; // first category scrolls to the top of menu container
+    } else if (category.category_id > 1 && category.parent_category_id === null) {
+      return <Divider className="horizontal-divider" ref={(categoryRefs) => (this.categoryRefs[category.category_id] = categoryRefs)} />;
     }
   }
 
-  category() {
-    return this.props.categories.map((category) => (
-      <React.Fragment key={category.category_id}>
-        {this.addDivider(category)}
-        <div className="category-container">
-          <div className="category-heading">{this.categoryHeading(category)}</div>
-          <div className="grid-x2">
-            <Item category={category} />
-          </div>
+  categoryBlock(category) {
+    return (
+      <div className="category-container">
+        <div className="category-heading">{this.categoryHeading(category)}</div>
+        <div className="grid-x2">
+          <Item category={category} />
         </div>
-      </React.Fragment>
-    ));
+      </div>
+    );
   }
 
   render() {
-    return this.category();
+    return this.props.categories.map((category) => (
+      <React.Fragment key={category.category_id}>
+        {this.addDivider(category)}
+        {this.categoryBlock(category)}
+      </React.Fragment>
+    ));
   }
 }
 

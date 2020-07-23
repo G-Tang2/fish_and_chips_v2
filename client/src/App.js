@@ -18,11 +18,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header heading="Oakleigh South Fish and Chips" getMenu={() => this.menuRef} getInfo={() => this.infoRef} ref={this.headerRef} />
+        <Header heading="Oakleigh South Fish and Chips" menuRef={this.menuRef} infoRef={this.infoRef} ref={this.headerRef} />
         <Hero />
         <FrontPageDescription description="Freshly cooked in 100% cholesterol free vegetable oil" />
         <div ref={this.menuRef}>
-          <Menu heading="Menu" getHeader={() => this.headerRef} />
+          <Menu heading="Menu" headerRef={this.headerRef} />
         </div>
         <div ref={this.infoRef}>
           <Info heading="Info" address="14 Old Dandenong Road Oakleigh South 3167" phoneNo="9570 2222" openHrHeading="Opening Hours" />
