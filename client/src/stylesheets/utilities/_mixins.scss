@@ -47,6 +47,8 @@
   max-width: 1300px;
   margin: auto;
   overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   transition: $category-bar-transition;
   background-color: #efe2ba;
 
