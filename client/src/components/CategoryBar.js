@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import Button from "@material-ui/core/Button";
 
 class CategoryBar extends Component {
   constructor(props) {
     super(props);
+    this.state = { activeCategoryId: null };
+    this.onScroll = this.onScroll.bind(this);
   }
 
   scrollTo = (ref) => {
@@ -13,10 +16,50 @@ class CategoryBar extends Component {
 
   mainCategory(category) {
     return category.parent_category_id === null ? (
-      <Button key={category.category_id} className="category-link" onClick={() => this.scrollTo(this.props.menuRef.current.categoryRefs[category.category_id])}>
+      <Button
+        key={category.category_id}
+        className={this.state.activeCategoryId === category.category_id ? "category-link active" : "category-link"}
+        onClick={() => this.scrollTo(this.props.menuRef.current.categoryRefs[category.category_id])}
+      >
         {category.category_name}
       </Button>
     ) : null;
+  }
+
+  getCategoryIndices(categoryArr) {
+    let ar = [];
+    for (let i = 1; i < categoryArr.length; i++) {
+      if (categoryArr[i] != null) {
+        ar.push(i);
+      }
+    }
+    return ar;
+  }
+
+  isViewingMenu() {
+    const headerHeight = this.props.headerRef.current.headerRef.current.offsetHeight;
+    return window.pageYOffset === this.props.catBarRef.current.offsetTop - headerHeight;
+  }
+
+  onScroll() {
+    if (this.isViewingMenu()) {
+      const categoryRefs = this.props.menuRef.current.categoryRefs;
+      const categoryIndices = this.getCategoryIndices(categoryRefs);
+      const heightOfTopBar = this.props.headerRef.current.headerRef.current.offsetHeight + this.props.catBarRef.current.offsetHeight;
+      for (let i = categoryIndices.length - 1; i >= 0; i--) {
+        const categoryIndex = categoryIndices[i];
+        if (categoryRefs[categoryIndex].offsetTop - heightOfTopBar <= window.pageYOffset) {
+          this.setState({ activeCategoryId: categoryIndex });
+          break;
+        }
+      }
+    } else if (this.state.activeCategoryId !== null) {
+      this.setState({ activeCategoryId: null });
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.onScroll);
   }
 
   render() {

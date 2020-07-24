@@ -1,3 +1,8 @@
+.active {
+  border-bottom: 4px solid #f13c20 !important;
+  color: #f13c20 !important;
+}
+
 .category-bar {
   @include category-bar-style();
 }

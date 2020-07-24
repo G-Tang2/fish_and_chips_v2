@@ -58,6 +58,9 @@
   .category-link {
     min-width: unset;
     padding: 8px 15px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-radius: 0px;
     font-size: 15px;
   }
   span {

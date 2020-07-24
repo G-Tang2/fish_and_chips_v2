@@ -30,6 +30,7 @@ class Menu extends Component {
   resizeCategoryBarOnScroll() {
     const headerHeight = this.props.headerRef.current.headerRef.current.offsetHeight;
     const currentYPos = this.catBarRef.current.getBoundingClientRect().y;
+
     if (currentYPos === headerHeight && this.state.expandCategoryBar === false) {
       this.setState({ expandCategoryBar: true });
     } else if (currentYPos !== headerHeight && this.state.expandCategoryBar === true) {
