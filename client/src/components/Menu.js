@@ -65,6 +65,11 @@ class Menu extends Component {
     window.addEventListener("resize", this.disableTransitionOnResize);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.resizeCategoryBarOnScroll);
+    window.removeEventListener("resize", this.disableTransitionOnResize);
+  }
+
   render() {
     return (
       <React.Fragment>

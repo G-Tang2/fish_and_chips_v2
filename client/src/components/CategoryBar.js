@@ -62,6 +62,10 @@ class CategoryBar extends Component {
     window.addEventListener("scroll", this.onScroll);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.onScroll);
+  }
+
   render() {
     return <React.Fragment>{this.props.categories.map((category) => this.mainCategory(category))}</React.Fragment>;
   }

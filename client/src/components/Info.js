@@ -55,21 +55,19 @@ class Info extends Component {
     return (
       <section className="info-container">
         <Grid container className="main-wrapper">
-          <Grid className="heading" item xs={12}>
-            <h1>{this.props.heading.toUpperCase()}</h1>
+          <Grid item xs={12}>
+            <h1 className="heading">{this.props.heading.toUpperCase()}</h1>
           </Grid>
-          <Grid className="store-info-wrapper" item xs={12}>
-            {this.storeInfo()}
-          </Grid>
-          <Grid className="open-hr-wrapper" item xs={6}>
-            {this.openHours()}
+          <Grid item xs={6}>
+            <div className="store-info-wrapper">{this.storeInfo()}</div>
+            <div className="open-hr-wrapper">{this.openHours()}</div>
           </Grid>
           <Grid className="google-maps-container" item xs={6}>
             <Iframe
               className="google-maps"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17802.756500507916!2d145.07022642821713!3d-37.927803090546604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad66b97569a33f5%3A0xa01909dda5f84ed5!2s14%20Old%20Dandenong%20Rd%2C%20Oakleigh%20South%20VIC%203167!5e0!3m2!1sen!2sau!4v1578658571384!5m2!1sen!2sau"
               width="90%"
-              height="320px"
+              height="98%"
             />
           </Grid>
         </Grid>

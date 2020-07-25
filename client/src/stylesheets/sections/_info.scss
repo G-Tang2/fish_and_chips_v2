@@ -5,10 +5,7 @@
   padding-bottom: 50px;
   background-color: $primary-background-color;
   .heading {
-    h1 {
-      font-size: $primary-heading-size;
-      color: $primary-font-color;
-    }
+    color: $primary-font-color;
   }
   .store-info-wrapper {
     display: flex;

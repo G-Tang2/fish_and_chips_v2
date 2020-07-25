@@ -4,7 +4,8 @@ import Hero from "./components/Hero";
 import FrontPageDescription from "./components/FrontPageDescription";
 import Menu from "./components/Menu";
 import Info from "./components/Info";
-import Contact from "./components/Contact";
+import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer";
 import "./stylesheets/main.scss";
 
 class App extends Component {
@@ -27,6 +28,10 @@ class App extends Component {
         <div ref={this.infoRef}>
           <Info heading="Info" address="14 Old Dandenong Road Oakleigh South 3167" phoneNo="9570 2222" openHrHeading="Opening Hours" />
         </div>
+        <div className="contact">
+          <ContactForm />
+        </div>
+        <Footer />
       </div>
     );
   }
