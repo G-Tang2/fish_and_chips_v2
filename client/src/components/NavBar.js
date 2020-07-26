@@ -15,7 +15,7 @@ class NavBar extends Component {
 
   scrollTo = (ref) => {
     const headerRef = this.props.headerRef;
-    window.scrollTo(0, ref.current.offsetTop - headerRef.current.offsetHeight);
+    window.scrollTo(0, ref.current.offsetTop - headerRef.current.offsetHeight + 1); // extra pixel to offset border
   };
 
   render() {
@@ -38,7 +38,9 @@ class NavBar extends Component {
             </Button>
           </ListItemText>
           <ListItemText>
-            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"}>CONTACT US</Button>
+            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"} onClick={() => this.scrollTo(this.props.contactRef)}>
+              CONTACT
+            </Button>
           </ListItemText>
         </ListItem>
       </List>

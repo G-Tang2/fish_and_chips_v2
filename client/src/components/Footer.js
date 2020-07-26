@@ -2,9 +2,11 @@ import React, { Component } from "react";
 
 class Footer extends Component {
   render() {
+    const currentYear = new Date().getFullYear();
+
     return (
       <footer className="footer">
-        <p>Copyright &copy; 2020 Oakleigh South Fish & Chips. All Rights Reserved.</p>
+        <p>Copyright &copy; {currentYear} Oakleigh South Fish & Chips. All Rights Reserved.</p>
       </footer>
     );
   }

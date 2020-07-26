@@ -36,8 +36,9 @@ export default () => {
   return (
     <section className="main-wrapper contact-wrapper">
       <Grid container className="contact-container">
-        <Grid item xs={12}>
+        <Grid item xs={12} className="contact-text">
           <h1 className="heading">Contact Us</h1>
+          <p>Have a question or feedback? We'd love to hear it.</p>
         </Grid>
         <Grid item xs={12}>
           <Formik initialValues={{ name: "", email: "", message: "" }} onSubmit={handleOnSubmit} validationSchema={formSchema}>

@@ -35,7 +35,7 @@ class Header extends Component {
         <div className="main-wrapper">
           <Toolbar className="heading-inner-container" disableGutters>
             <h3 className={this.state.topOfPage ? "header-heading-expanded" : "header-heading"}>{this.props.heading}</h3>
-            <NavBar menuRef={this.props.menuRef} infoRef={this.props.infoRef} headerRef={this.headerRef} topOfPage={this.state.topOfPage} />
+            <NavBar menuRef={this.props.menuRef} infoRef={this.props.infoRef} contactRef={this.props.contactRef} headerRef={this.headerRef} topOfPage={this.state.topOfPage} />
           </Toolbar>
         </div>
       </AppBar>

@@ -41,7 +41,15 @@
 
 .contact-wrapper {
   padding-bottom: 40px;
-  .heading {
-    color: $primary-font-color;
+  .contact-text {
+    margin-bottom: 15px;
+    .heading {
+      margin-bottom: 0px;
+      color: $primary-font-color;
+    }
+    p {
+      margin-top: 0.5em;
+      color: $primary-font-color;
+    }
   }
 }
