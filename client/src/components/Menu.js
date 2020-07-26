@@ -6,8 +6,8 @@ class Menu extends Component {
   constructor(props) {
     super(props);
     this.catBarRef = React.createRef();
+    this.menuComponentRef = React.createRef();
     this.menuRef = React.createRef();
-    this.topMenuRef = React.createRef();
     this.resizeCategoryBarOnScroll = this.resizeCategoryBarOnScroll.bind(this);
     this.disableTransitionOnResize = this.disableTransitionOnResize.bind(this);
     this.state = {
@@ -28,8 +28,8 @@ class Menu extends Component {
   }
 
   resizeCategoryBarOnScroll() {
-    const headerHeight = this.props.headerRef.current.headerRef.current.offsetHeight;
-    const currentYPos = this.catBarRef.current.getBoundingClientRect().y;
+    const headerHeight = Math.round(this.props.headerRef.current.headerRef.current.getBoundingClientRect().height);
+    const currentYPos = Math.round(this.catBarRef.current.getBoundingClientRect().y);
 
     if (currentYPos === headerHeight && this.state.expandCategoryBar === false) {
       this.setState({ expandCategoryBar: true });
@@ -80,13 +80,19 @@ class Menu extends Component {
         </div>
         <div className={this.categoryBarClassName()} ref={this.catBarRef}>
           <div className="inner-category-bar">
-            <CategoryBar categories={this.state.categories} headerRef={this.props.headerRef} menuRef={this.menuRef} catBarRef={this.catBarRef} />
+            <CategoryBar
+              categories={this.state.categories}
+              headerRef={this.props.headerRef}
+              menuRef={this.menuRef}
+              menuComponentRef={this.menuComponentRef}
+              catBarRef={this.catBarRef}
+            />
           </div>
         </div>
-        <section className="main-wrapper menu-wrapper" ref={this.topMenuRef}>
+        <section className="main-wrapper menu-wrapper" ref={this.menuRef}>
           <div className="menu-container">
             <div className="menu-body">
-              <MenuBody categories={this.state.categories} ref={this.menuRef} topMenuRef={this.topMenuRef} />
+              <MenuBody categories={this.state.categories} ref={this.menuComponentRef} menuRef={this.menuRef} />
             </div>
           </div>
         </section>

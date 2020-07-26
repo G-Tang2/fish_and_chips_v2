@@ -29,7 +29,7 @@ class MenuBody extends Component {
 
   addDivider(category) {
     if (category.category_id === 1) {
-      this.categoryRefs[1] = this.props.topMenuRef.current; // first category scrolls to the top of menu container
+      this.categoryRefs[1] = this.props.menuRef.current; // first category scrolls to the top of menu container
     } else if (category.category_id > 1 && category.parent_category_id === null) {
       return <Divider className="horizontal-divider" ref={(categoryRefs) => (this.categoryRefs[category.category_id] = categoryRefs)} />;
     }

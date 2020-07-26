@@ -19,7 +19,7 @@ class CategoryBar extends Component {
       <Button
         key={category.category_id}
         className={this.state.activeCategoryId === category.category_id ? "category-link active" : "category-link"}
-        onClick={() => this.scrollTo(this.props.menuRef.current.categoryRefs[category.category_id])}
+        onClick={() => this.scrollTo(this.props.menuComponentRef.current.categoryRefs[category.category_id])}
       >
         {category.category_name}
       </Button>
@@ -38,17 +38,25 @@ class CategoryBar extends Component {
 
   isViewingMenu() {
     const headerHeight = this.props.headerRef.current.headerRef.current.offsetHeight;
-    return window.pageYOffset === this.props.catBarRef.current.offsetTop - headerHeight;
+    const catBarHeight = this.props.catBarRef.current.offsetHeight;
+    const topYPos = this.props.menuRef.current.offsetTop;
+
+    const startYPos = topYPos - (headerHeight + catBarHeight);
+    const endYPos = topYPos + this.props.menuRef.current.offsetHeight - headerHeight;
+
+    const currentYPos = Math.round(window.pageYOffset);
+    return currentYPos >= startYPos && currentYPos <= endYPos;
   }
 
   onScroll() {
     if (this.isViewingMenu()) {
-      const categoryRefs = this.props.menuRef.current.categoryRefs;
+      const categoryRefs = this.props.menuComponentRef.current.categoryRefs;
       const categoryIndices = this.getCategoryIndices(categoryRefs);
       const heightOfTopBar = this.props.headerRef.current.headerRef.current.offsetHeight + this.props.catBarRef.current.offsetHeight;
+
       for (let i = categoryIndices.length - 1; i >= 0; i--) {
         const categoryIndex = categoryIndices[i];
-        if (categoryRefs[categoryIndex].offsetTop - heightOfTopBar <= window.pageYOffset) {
+        if (categoryRefs[categoryIndex].offsetTop - heightOfTopBar <= Math.round(window.pageYOffset)) {
           this.setState({ activeCategoryId: categoryIndex });
           break;
         }

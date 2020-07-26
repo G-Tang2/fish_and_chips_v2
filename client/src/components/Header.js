@@ -14,9 +14,12 @@ class Header extends Component {
   }
 
   resizeHeaderOnScroll() {
-    if (window.pageYOffset === 0 && this.state.topOfPage === false) {
+    const currentYPos = Math.round(window.pageYOffset);
+    const topOfPageState = this.state.topOfPage;
+
+    if (currentYPos === 0 && topOfPageState === false) {
       this.setState({ topOfPage: true });
-    } else if (window.pageYOffset > 0 && this.state.topOfPage === true) {
+    } else if (currentYPos > 0 && topOfPageState === true) {
       this.setState({ topOfPage: false });
     }
   }
