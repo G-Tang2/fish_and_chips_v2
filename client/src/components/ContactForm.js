@@ -41,7 +41,7 @@ export default () => {
           <p>Have a question or feedback? We'd love to hear it.</p>
         </Grid>
         <Grid item xs={12}>
-          <Formik initialValues={{ name: "", email: "", message: "" }} onSubmit={handleOnSubmit} validationSchema={formSchema}>
+          <Formik initialValues={{ name: "", email: "", message: "" }} onSubmit={handleOnSubmit} validationSchema={formSchema} validateOnChange={false} validateOnBlur={false}>
             {({ isSubmitting }) => (
               <Form id="fs-frm" noValidate>
                 <Grid container spacing={4} className="form-container">

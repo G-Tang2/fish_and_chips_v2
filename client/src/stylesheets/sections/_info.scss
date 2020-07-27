@@ -3,9 +3,7 @@
 
 .info-container {
   padding-bottom: 50px;
-  background-color: $primary-background-color;
   .heading {
-    color: $primary-font-color;
   }
   .store-info-wrapper {
     display: flex;
@@ -15,7 +13,6 @@
       margin: auto;
       .icon {
         margin: auto 0;
-        color: white;
       }
       .location-info {
         display: flex;
@@ -38,7 +35,6 @@
     margin: auto;
     width: 70%;
     text-align: center;
-    color: $primary-font-color;
     .open-hr-item-container {
       display: flex;
       justify-content: space-between;
@@ -54,7 +50,7 @@
   .google-maps-container {
     .google-maps {
       margin: auto;
-      border: 3px solid white;
+      border: 3px solid black;
     }
   }
 }
