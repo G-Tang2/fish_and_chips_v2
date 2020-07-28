@@ -3,37 +3,42 @@
 
 .info-container {
   padding-bottom: 50px;
-  .heading {
-  }
-  .store-info-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 35px;
-    .store-info-container {
-      margin: auto;
-      .icon {
-        margin: auto 0;
-      }
-      .location-info {
-        display: flex;
-        justify-content: center;
-        p {
-          @include text-style();
+  background-color: #e1e1e1;
+  .info-left-container {
+    margin: auto;
+    padding: 0px 60px;
+    .store-info-wrapper {
+      display: flex;
+      justify-content: center;
+      .store-info-container {
+        margin: auto;
+        .icon {
+          margin: auto 0;
+        }
+        .location-info {
+          display: flex;
+          justify-content: center;
+          p {
+            @include text-style();
+          }
+        }
+        .phone-info {
+          display: flex;
+          justify-content: center;
+          p {
+            @include text-style();
+            margin-left: 2px;
+          }
         }
       }
-      .phone-info {
-        display: flex;
-        justify-content: center;
-        p {
-          @include text-style();
-          margin-left: 2px;
-        }
-      }
+    }
+    .info-divider {
+      margin: 25px 0px;
     }
   }
   .open-hr-container {
     margin: auto;
-    width: 70%;
+    width: 90%;
     text-align: center;
     .open-hr-item-container {
       display: flex;
@@ -42,8 +47,9 @@
       font-size: $large-body-font-size;
     }
     h3 {
-      margin: 0.5em 0;
-      padding: 0.5em 0;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      padding-top: 10px;
       font-size: $secondary-heading-size * 0.75;
     }
   }

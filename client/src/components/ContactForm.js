@@ -64,7 +64,7 @@ export default () => {
                 <Button className="submit-button" type="submit" variant="outlined" color="default" disabled={isSubmitting}>
                   Submit
                 </Button>
-                {serverState && <p className={!serverState.ok ? "errorMsg" : ""}>{serverState.msg}</p>}
+                {serverState && <p className={!serverState.ok ? "errorMsg" : "successMsg"}>{serverState.msg}</p>}
               </Form>
             )}
           </Formik>

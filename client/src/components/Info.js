@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
+import Divider from "@material-ui/core/Divider";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from "@material-ui/icons/Phone";
 import Iframe from "../../node_modules/react-iframe/";
@@ -59,14 +60,17 @@ class Info extends Component {
             <h1 className="heading">{this.props.heading.toUpperCase()}</h1>
           </Grid>
           <Grid item xs={6}>
-            <div className="store-info-wrapper">{this.storeInfo()}</div>
-            <div className="open-hr-wrapper">{this.openHours()}</div>
+            <div className="info-left-container">
+              <div className="store-info-wrapper">{this.storeInfo()}</div>
+              <Divider className="info-divider" />
+              <div className="open-hr-wrapper">{this.openHours()}</div>
+            </div>
           </Grid>
           <Grid className="google-maps-container" item xs={6}>
             <Iframe
               className="google-maps"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17802.756500507916!2d145.07022642821713!3d-37.927803090546604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad66b97569a33f5%3A0xa01909dda5f84ed5!2s14%20Old%20Dandenong%20Rd%2C%20Oakleigh%20South%20VIC%203167!5e0!3m2!1sen!2sau!4v1578658571384!5m2!1sen!2sau"
-              width="90%"
+              width="100%"
               height="98%"
             />
           </Grid>

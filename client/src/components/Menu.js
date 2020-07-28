@@ -89,13 +89,13 @@ class Menu extends Component {
             />
           </div>
         </div>
-        <section className="main-wrapper menu-wrapper" ref={this.menuRef}>
+        <div className="main-wrapper menu-wrapper" ref={this.menuRef}>
           <div className="menu-container">
             <div className="menu-body">
               <MenuBody categories={this.state.categories} ref={this.menuComponentRef} menuRef={this.menuRef} />
             </div>
           </div>
-        </section>
+        </div>
       </React.Fragment>
     );
   }
