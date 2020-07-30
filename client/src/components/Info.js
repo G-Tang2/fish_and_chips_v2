@@ -56,7 +56,7 @@ class Info extends Component {
     return (
       <section className="info-container">
         <Grid container className="main-wrapper">
-          <Grid item xs={12}>
+          <Grid className="heading-container" item xs={12}>
             <h1 className="heading">{this.props.heading.toUpperCase()}</h1>
           </Grid>
           <Grid item xs={6}>

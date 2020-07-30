@@ -1,0 +1,10 @@
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  height: 20vw;
+  .food-image {
+    width: 33.33%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

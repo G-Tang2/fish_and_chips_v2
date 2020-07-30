@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import FrontPageDescription from "./components/FrontPageDescription";
 import Menu from "./components/Menu";
+import Images from "./components/Images";
 import Info from "./components/Info";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
@@ -23,9 +24,10 @@ class App extends Component {
         <Header heading="Oakleigh South Fish and Chips" ref={this.headerRef} menuRef={this.menuRef} infoRef={this.infoRef} contactRef={this.contactRef} />
         <Hero />
         <FrontPageDescription description="Freshly cooked in 100% cholesterol free vegetable oil" />
-        <div ref={this.menuRef}>
+        <div className="menu" ref={this.menuRef}>
           <Menu heading="Menu" headerRef={this.headerRef} />
         </div>
+        <Images />
         <div ref={this.infoRef}>
           <Info heading="Info" address="14 Old Dandenong Road Oakleigh South 3167" phoneNo="9570 2222" openHrHeading="Opening Hours" />
         </div>
