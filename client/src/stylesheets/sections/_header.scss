@@ -17,12 +17,7 @@
   justify-content: space-between;
 }
 
-.nav-link {
-  @include nav-style();
-}
-
 .nav-link-expanded {
-  @include nav-style();
   font-size: $nav-bar-font-size * 1.1 !important;
 }
 

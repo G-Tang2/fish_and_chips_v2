@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import Button from "@material-ui/core/Button";
+import CustomButton from "./CustomButton";
 
 class NavBar extends Component {
   constructor(props) {
@@ -23,24 +23,16 @@ class NavBar extends Component {
       <List component="nav">
         <ListItem component="div" disableGutters>
           <ListItemText>
-            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"} onClick={this.scrollToTop}>
-              HOME
-            </Button>
+            <CustomButton text={"HOME"} topOfPage={this.props.topOfPage} />
           </ListItemText>
           <ListItemText>
-            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"} onClick={() => this.scrollTo(this.props.menuRef)}>
-              MENU
-            </Button>
+            <CustomButton text={"MENU"} topOfPage={this.props.topOfPage} aRef={this.props.menuRef} headerRef={this.props.headerRef} />
           </ListItemText>
           <ListItemText>
-            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"} onClick={() => this.scrollTo(this.props.infoRef)}>
-              INFO
-            </Button>
+            <CustomButton text={"INFO"} topOfPage={this.props.topOfPage} aRef={this.props.infoRef} headerRef={this.props.headerRef} />
           </ListItemText>
           <ListItemText>
-            <Button className={this.props.topOfPage ? "nav-link-expanded" : "nav-link"} onClick={() => this.scrollTo(this.props.contactRef)}>
-              CONTACT
-            </Button>
+            <CustomButton text={"CONTACT"} topOfPage={this.props.topOfPage} aRef={this.props.contactRef} headerRef={this.props.headerRef} />
           </ListItemText>
         </ListItem>
       </List>

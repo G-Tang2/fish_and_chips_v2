@@ -31,13 +31,6 @@
   transition: $header-transition;
 }
 
-@mixin nav-style() {
-  padding: 10px 15px !important;
-  color: $primary-font-color !important;
-  font-size: $nav-bar-font-size !important;
-  transition: $header-transition !important;
-}
-
 @mixin category-bar-style() {
   display: flex;
   position: sticky;
